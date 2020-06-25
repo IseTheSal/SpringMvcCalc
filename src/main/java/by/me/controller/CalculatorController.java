@@ -26,6 +26,7 @@ public class CalculatorController {
     @Autowired
     private HistoryController historyController;
 
+
     @GetMapping
     public String form() {
         return "calc";
@@ -40,6 +41,4 @@ public class CalculatorController {
         model.addAttribute("result", result);
         return "calc";
     }
-
-
 }

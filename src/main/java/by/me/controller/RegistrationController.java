@@ -18,14 +18,20 @@ public class RegistrationController {
     @Autowired
     private Storage storage;
 
+    @GetMapping
+    public String form() {
+        return "reg";
+    }
+
     @PostMapping
-    public void regUser(@RequestParam String name, @RequestParam String login, @RequestParam String password, Model model) {
+    public String regUser(@RequestParam String name, @RequestParam String login, @RequestParam String password, Model model) {
         User user = new User(password, login, name);
-        if (storage.checkUser(user)) {
+        if (!storage.checkOnExist(user)) {
             storage.addUser(user);
-            model.addAttribute("registration", "Done!");
+            return "main";
         } else {
             model.addAttribute("registration", "User with this login is already exist");
         }
+        return "reg";
     }
 }

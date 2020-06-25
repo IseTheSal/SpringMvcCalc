@@ -10,7 +10,6 @@ import java.util.List;
 @Service
 public class Calculator {
 
-
     public double calc(double num1, double num2, String op) throws IllegalArgumentException {
         switch (op) {
             case "plus":
