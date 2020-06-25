@@ -14,4 +14,8 @@
 Answer = ${result}
 
 </body>
+<body>
+<a href="/history">Show history</a>
+<a href="/logout">Logout</a>
+</body>
 </html>
