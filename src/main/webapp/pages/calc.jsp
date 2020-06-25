@@ -5,9 +5,15 @@
     <title>Calculator</title>
 </head>
 <form action="/calculator" method="post">
-    <input type="text" name="num1">
     <input type="text" name="num2">
-    <input type="text" name="op">
+    <select name="op">
+        <option disabled>Enter operation</option>
+        <option value="plus"> + </option>
+        <option value="minus"> - </option>
+        <option value="power"> * </option>
+        <option value="divide"> / </option>
+    </select>
+    <input type="text" name="num1">
     <button>Calc</button>
 </form>
 <body>
