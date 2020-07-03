@@ -16,6 +16,13 @@ public class ExceptionController {
         return "userauth";
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public String ex(IllegalArgumentException ex, Model model) {
+        String message = ex.getMessage();
+        model.addAttribute("message", message);
+        return "calc";
+    }
+
     @ExceptionHandler(UserNotFoundException.class)
     public String ex (UserNotFoundException ex, Model model){
         String message = ex.getMessage();
